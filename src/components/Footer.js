@@ -4,7 +4,7 @@ import StickyFooter from 'react-sticky-footer';
 class Footer extends Component {
 	render() {
 		return (
-			<div style={{position: 'absolute', bottom: '0px', width: '100%'}}>
+			<div style={{'bottom': '0px', width: '100%', paddingTop: '5vh'}}>
 				<StickyFooter
 				    bottomThreshold={50}
 				    normalStyles={{
@@ -13,8 +13,7 @@ class Footer extends Component {
 				    color: "white"
 				    }}
 				    stickyStyles={{
-				    backgroundColor: "rgba(255,255,255,.8)",
-				    padding: "2rem"
+				    opacity: '0'
 				    }}
 				>
 				    Crafted with &#10084; in Bandung, Indonesia 

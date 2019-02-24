@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
+  test() {
+  	console.log(sessionStorage);
+  }
   render() {
     return (
-		<div> 
+		<div style={{overflowY: 'hidden'}}> 
 		    <img className="class" src="https://a-static.besthdwallpaper.com/java-programming-language-coding-wallpaper-2560x1600-17042_7.jpg" 
-		    style={{position: 'absolute', height: '90vh', width: '100%', filter: 'blur(3px)', '-webkit-filter': 'blur(3px)'}} alt="bg">
+		    style={{position: 'absolute', height: '91vh', width: '100%', filter: 'blur(2px)', 'WebkitFilter': 'blur(2px)'}} alt="bg">
 		    </img>
-		    <div style={{position: 'absolute', color: 'white', top: '20vh', left: '5vw'}}> 
+		    <div style={{position: 'relative', color: 'white', top: '20vh', height: '50vh', width: '90vw', left: '5vw'}}> 
 		    	<h1>
 		       		BAJAX
 		    	</h1>
-		    	<p>Let's Play With Our Games And Make More Exploitations !</p>
-		    	<Button> Play Now ! </Button>
+		    	<p><b>Let's Play With Our Games And Make More Exploitations !</b></p>
+		    	<Link to="/login" className="btn btn-primary" onClick={this.test}> Play Now ! </Link>
 		    </div>
 		</div>
 		)
