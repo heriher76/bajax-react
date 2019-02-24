@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, Button, Tabs, Tab } from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import axios from 'axios';
 
 class Challenges extends Component {
@@ -15,7 +15,6 @@ class Challenges extends Component {
 	componentDidMount() {
 	  	axios.get(`http://localhost/bajax-lumen/html/challenge`, { 'headers': { 'Authorization': sessionStorage.api_token } })
 		  .then((response) => {
-		  	console.log(response.data.data);
 		  	this.setState({
 		  		challenges: response.data.data
 		  	})
@@ -34,6 +33,11 @@ class Challenges extends Component {
 			<div className="container">
 				<ToastContainer />
 				<center><u><b><h1> Challenges </h1></b></u></center><br />
+				{
+					(sessionStorage.roles === '17') ?
+					<Link to="/challenges/create" className="btn btn-success" style={{marginBottom: '10px'}}> Add Challenge </Link>
+					: null
+				}
 				<div className="row">
 					{ this.state.challenges.map((challenge,i) => 
 					<div className="col-md-4" style={{border: 'solid 1px'}} key={i} > 

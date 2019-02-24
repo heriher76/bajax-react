@@ -38,12 +38,13 @@ class Register extends Component {
 			password: this.state.password,
 			aboutme: this.state.aboutme
 		}
-		console.log(qs.stringify(data));
 		axios.post(`http://localhost/bajax-lumen/html/register`, qs.stringify( data ))
 	      .then(res => {
 	        console.log(res);
 	        console.log(res.data);
-	      })
+	      }).catch(err => {
+	      	console.log(err);
+	      });
 	}
 
 	render() {

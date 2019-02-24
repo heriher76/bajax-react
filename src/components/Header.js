@@ -3,6 +3,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import Scoreboard from './Scoreboard.js';
 import Challenges from './Challenges.js';
+import CreateChallenge from './CreateChallenge.js';
 import Login from './Login.js';
 import Home from './Home.js';
 import Register from './Register.js';
@@ -71,8 +72,8 @@ class NavBar extends Component {
 		    	<Route path="/" exact component={Home} />
 		    	<Route path="/scoreboard" exact component={Scoreboard} />
 		    	<Route path="/challenges" exact component={Challenges} />
+		    	<Route path="/challenges/create" exact component={CreateChallenge} />
 		    	<Route path="/login" exact component={Login} />
-		    	{/*<Route path="/logout" exact component={Logout} />*/}
 		    	<Route path="/register" exact component={Register} />
 		    	
 		    </Switch>

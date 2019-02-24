@@ -40,6 +40,7 @@ class Login extends Component {
 	      	if(responseJSON.data.success) {
 	      		sessionStorage.setItem('api_token', responseJSON.data.data.api_token);
 	      		sessionStorage.setItem('username', responseJSON.data.data.user.name);
+	      		sessionStorage.setItem('roles', responseJSON.data.data.permissions.length);
 	      	}  
 	      	toast.success("You Are Logged In !");
 	      	setTimeout(() => {
@@ -47,7 +48,7 @@ class Login extends Component {
 	      			submitting: true,
 					redirect: true
 	      		});
-	      		// window.location.href='/';
+	      		window.location.href='/';
 	      	}, 3000)
 	        console.log(response);
 	      }).catch((error) => {
